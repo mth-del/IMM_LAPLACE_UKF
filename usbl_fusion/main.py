@@ -6,7 +6,7 @@ LastEditTime: 2025-12-12 13:59:20
 FilePath: /usbl_fusion/mian.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
-# main.py
+# main.py test
 import numpy as np
 
 from data.simulator import SimConfig, NoiseConfig, generate_truth, simulate_sensors
