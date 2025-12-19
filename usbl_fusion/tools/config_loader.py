@@ -25,13 +25,21 @@ T = TypeVar("T")
 
 def _cast_like(value: str, like: Any) -> Any:
     """把 ini 的字符串值转换成与 like 同类型的值。"""
+    # ConfigParser 允许“续行值”（下一行以空白开头会拼接到上一行的 value）。
+    # 为了避免 ini 里不小心缩进导致数值字段混入多行文本，这里只取第一行并去掉行内注释。
+    v = (value.splitlines()[0] if isinstance(value, str) else str(value)).strip()
+    # 手动剔除行内注释（即使 ConfigParser 未开启 inline_comment_prefixes 也能稳健解析）
+    for sep in (";", "#"):
+        if sep in v:
+            v = v.split(sep, 1)[0].strip()
+
     if isinstance(like, bool):
-        return value.strip().lower() in ("1", "true", "yes", "y", "on")
+        return v.lower() in ("1", "true", "yes", "y", "on")
     if isinstance(like, int) and not isinstance(like, bool):
-        return int(float(value))  # 允许 ini 写 10.0
+        return int(float(v))  # 允许 ini 写 10.0
     if isinstance(like, float):
-        return float(value)
-    return value
+        return float(v)
+    return v
 
 
 def _dataclass_from_section(cls: Type[T], section: Dict[str, str]) -> T:
@@ -54,7 +62,8 @@ def load_sim_and_noise_config(path: str | Path) -> Tuple[SimConfig, NoiseConfig]
     - [noise]-> NoiseConfig
     """
     path = Path(path)
-    parser = ConfigParser()
+    # 支持 ini 行内注释（例如：turn_direction = 1  ; +1 逆时针）
+    parser = ConfigParser(inline_comment_prefixes=(";", "#"))
     parser.read(path, encoding="utf-8")
 
     sim_cfg = _dataclass_from_section(SimConfig, dict(parser["sim"]) if parser.has_section("sim") else {})

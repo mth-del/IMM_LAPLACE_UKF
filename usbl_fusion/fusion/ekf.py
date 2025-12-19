@@ -97,7 +97,7 @@ class EkfUsblDvlIns:
             raise ValueError(f"DVL vel_meas 维度应为 (2,), 实际为 {z.shape}")
         self._update(z=z, H=self.H_dvl, R=self.R_dvl)
 
-    def update_usbl(self, pos_meas: np.ndarray):
+    def update_usbl(self, pos_meas: np.ndarray, *, R: np.ndarray | None = None):
         """
         USBL 位置更新
         - 量测：z_p = [pN, pE]^T
@@ -106,4 +106,4 @@ class EkfUsblDvlIns:
         z = np.asarray(pos_meas, dtype=float).reshape(-1)
         if z.shape[0] != 2:
             raise ValueError(f"USBL pos_meas 维度应为 (2,), 实际为 {z.shape}")
-        self._update(z=z, H=self.H_usbl, R=self.R_usbl)
+        self._update(z=z, H=self.H_usbl, R=self.R_usbl if R is None else np.asarray(R, dtype=float))

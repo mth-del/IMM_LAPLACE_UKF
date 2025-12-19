@@ -28,10 +28,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 from models.dynamics import propagate_state
 from tools.logging_setup import setup_logger, logger
+from tools.mpl_setup import configure_matplotlib
 
 
 class KeyboardTrajectorySim:
@@ -130,6 +130,10 @@ class KeyboardTrajectorySim:
 
 def main():
     setup_logger(level="INFO")
+    backend = configure_matplotlib(gui=True)
+    logger.info("matplotlib backend = {}", backend)
+
+    import matplotlib.pyplot as plt
 
     sim = KeyboardTrajectorySim(dt=0.1, horizon_steps=250, acc_step=0.01, acc_limit=0.2)
     logger.info("键盘控制轨迹启动：dt={}s, horizon_steps={}", sim.dt, sim.horizon_steps)
