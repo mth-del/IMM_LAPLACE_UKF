@@ -1,0 +1,10 @@
+2025-12-19 14:20:00.082 | INFO     | __main__:main:24 - 启动仿真与融合流程
+2025-12-19 14:20:00.082 | INFO     | __main__:main:29 - 已加载配置文件：/home/insta360/Code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2025-12-19 14:20:00.112 | INFO     | __main__:main:37 - 真值轨迹生成完成：N=6001, dt=0.1
+2025-12-19 14:20:00.161 | INFO     | __main__:main:43 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2025-12-19 14:20:00.287 | INFO     | __main__:main:81 - 融合完成，开始绘图
+2025-12-19 14:20:15.790 | INFO     | __main__:main:24 - 启动仿真与融合流程
+2025-12-19 14:20:15.791 | INFO     | __main__:main:29 - 已加载配置文件：/home/insta360/Code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2025-12-19 14:20:15.819 | INFO     | __main__:main:37 - 真值轨迹生成完成：N=6001, dt=0.1
+2025-12-19 14:20:15.865 | INFO     | __main__:main:43 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2025-12-19 14:20:15.983 | INFO     | __main__:main:81 - 融合完成，开始绘图

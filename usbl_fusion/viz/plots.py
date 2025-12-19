@@ -38,8 +38,8 @@ def plot_errors(t, x_true, x_ins, x_fused):
     plt.title("Position error norm vs time")
 
     plt.subplot(2, 1, 2)
-    plt.plot(t, err_fused[:, 0], label="N error")
-    plt.plot(t, err_fused[:, 1], label="E error")
+    plt.plot(t, err_fused[:, 0], label="N error")  # 融合结果的北向位置误差：pN_est - pN_true
+    plt.plot(t, err_fused[:, 1], label="E error")  # 融合结果的东向位置误差：pE_est - pE_true
     plt.xlabel("Time (s)")
     plt.ylabel("Error (m)")
     plt.grid(True)

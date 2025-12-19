@@ -49,29 +49,61 @@ class EkfUsblDvlIns:
         self.x = np.zeros(4)               # 可以根据需要设初值
         self.P = np.diag([100.0, 100.0, 1.0, 1.0])
 
+    def _update(self, z: np.ndarray, H: np.ndarray, R: np.ndarray):
+        """
+        EKF 线性量测更新（理论对应）：
+        - 量测模型：z = H x + v,  v ~ N(0, R)
+        - 创新：y = z - H x
+        - 创新协方差：S = H P H^T + R
+        - 卡尔曼增益：K = P H^T S^{-1}
+        - 状态更新：x <- x + K y
+        - 协方差更新（Joseph 形式，更稳）：P <- (I-KH)P(I-KH)^T + K R K^T
+        """
+        z = np.asarray(z, dtype=float).reshape(-1)
+
+        S = H @ self.P @ H.T + R
+        # 用 solve 代替 inv：K = P H^T S^{-1}
+        # np.linalg.solve(A, B) 解 A X = B
+        # 令 A = S (m×m), B = (P H^T)^T (m×n) => X = (S^{-1}(P H^T)^T) (m×n)
+        # K = X^T (n×m)
+        PHt = self.P @ H.T
+        K = np.linalg.solve(S, PHt.T).T
+
+        y = z - H @ self.x
+        self.x = self.x + K @ y
+
+        I = np.eye(self.P.shape[0])
+        IKH = I - K @ H
+        self.P = IKH @ self.P @ IKH.T + K @ R @ K.T
+        # 数值误差下保证对称性（不改变理论意义）
+        self.P = 0.5 * (self.P + self.P.T)
+
     def predict(self, a_meas: np.ndarray):
         """利用 INS 加速度做预测"""
-        self.x = self.F @ self.x + self.B @ a_meas
+        a = np.asarray(a_meas, dtype=float).reshape(-1)
+        if a.shape[0] != 2:
+            raise ValueError(f"INS a_meas 维度应为 (2,), 实际为 {a.shape}")
+        self.x = self.F @ self.x + self.B @ a
         self.P = self.F @ self.P @ self.F.T + self.Q
 
     def update_dvl(self, vel_meas: np.ndarray):
-        """DVL 速度更新"""
-        z = vel_meas
-        H = self.H_dvl
-        R = self.R_dvl
-
-        S = H @ self.P @ H.T + R
-        K = self.P @ H.T @ np.linalg.inv(S)
-        self.x = self.x + K @ (z - H @ self.x)
-        self.P = (np.eye(4) - K @ H) @ self.P
+        """
+        DVL 速度更新
+        - 量测：z_v = [vN, vE]^T
+        - H_dvl 选取状态中的速度分量
+        """
+        z = np.asarray(vel_meas, dtype=float).reshape(-1)
+        if z.shape[0] != 2:
+            raise ValueError(f"DVL vel_meas 维度应为 (2,), 实际为 {z.shape}")
+        self._update(z=z, H=self.H_dvl, R=self.R_dvl)
 
     def update_usbl(self, pos_meas: np.ndarray):
-        """USBL 位置更新"""
-        z = pos_meas
-        H = self.H_usbl
-        R = self.R_usbl
-
-        S = H @ self.P @ H.T + R
-        K = self.P @ H.T @ np.linalg.inv(S)
-        self.x = self.x + K @ (z - H @ self.x)
-        self.P = (np.eye(4) - K @ H) @ self.P
+        """
+        USBL 位置更新
+        - 量测：z_p = [pN, pE]^T
+        - H_usbl 选取状态中的位置分量
+        """
+        z = np.asarray(pos_meas, dtype=float).reshape(-1)
+        if z.shape[0] != 2:
+            raise ValueError(f"USBL pos_meas 维度应为 (2,), 实际为 {z.shape}")
+        self._update(z=z, H=self.H_usbl, R=self.R_usbl)
