@@ -408,7 +408,7 @@ def plot_fusion_results(
     return saved
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
     root = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description="IMU+DVL+GT CSV -> 2D EKF fusion")
     parser.add_argument(
@@ -457,7 +457,7 @@ def main() -> None:
         action="store_true",
         help="只绘图：读取已有 fused CSV，不重新跑融合",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     plots_dir = Path(args.plots_dir) if args.plots_dir else (root / "outputs" / "plots_dataset")
 

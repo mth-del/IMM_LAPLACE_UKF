@@ -1,0 +1,19 @@
+2026-04-13 00:24:20.058 | INFO     | sim_hub:cli_main:130 - 总控调度：baseline -> marine -> dataset
+2026-04-13 00:24:20.058 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: baseline — 合成真值 + 高斯传感器 + INS/EKF 融合 ========
+2026-04-13 00:24:20.183 | INFO     | sims.baseline:run:30 - matplotlib backend = Agg
+2026-04-13 00:24:20.365 | INFO     | sims.baseline:run:40 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 00:24:20.414 | INFO     | sims.baseline:run:47 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-13 00:24:20.479 | INFO     | sims.baseline:run:52 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-13 00:24:20.678 | INFO     | sims.baseline:run:68 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=0.583179 max=1.985370 | INS+USBL EKF mean=4.399277 max=9.862245
+2026-04-13 00:24:20.678 | INFO     | sims.baseline:run:82 - 融合完成，开始绘图
+2026-04-13 00:24:20.950 | INFO     | sims.baseline:run:89 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-13 00:24:20.950 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 00:24:20.951 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 00:24:20.951 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 00:24:20.952 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 00:24:20.952 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02
+2026-04-13 00:24:21.304 | INFO     | sims.marine:run:96 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.550698 max=24.627113 | INS+USBL EKF mean=4.326357 max=11.596751
+2026-04-13 00:24:21.776 | INFO     | sims.marine:run:114 - 已保存图像 4 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 00:24:21.776 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: dataset — 真实 CSV（IMU+DVL+GT）二维 EKF 融合 ========
+2026-04-13 00:25:25.876 | INFO     | sim_hub:cli_main:130 - 总控调度：dataset
+2026-04-13 00:25:25.876 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: dataset — 真实 CSV（IMU+DVL+GT）二维 EKF 融合 ========
