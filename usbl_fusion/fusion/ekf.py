@@ -48,6 +48,13 @@ class EkfUsblDvlIns:
         # 初值
         self.x = np.zeros(4)               # 可以根据需要设初值
         self.P = np.diag([100.0, 100.0, 1.0, 1.0])
+        self._predict_dt = float(cfg.dt)
+
+    def _rebuild_motion(self, dt: float) -> None:
+        self.F, self.B = get_F_B(dt)
+        Q_acc = (self.cfg.acc_noise_std ** 2) * (self.B @ self.B.T)
+        self.Q = Q_acc + 1e-6 * np.eye(4)
+        self._predict_dt = float(dt)
 
     def _update(self, z: np.ndarray, H: np.ndarray, R: np.ndarray):
         """
@@ -78,11 +85,14 @@ class EkfUsblDvlIns:
         # 数值误差下保证对称性（不改变理论意义）
         self.P = 0.5 * (self.P + self.P.T)
 
-    def predict(self, a_meas: np.ndarray):
-        """利用 INS 加速度做预测"""
+    def predict(self, a_meas: np.ndarray, dt: float | None = None):
+        """利用 INS 加速度做预测。dt 为 None 时使用构造时的 cfg.dt；否则按该步长重建 F、B、Q。"""
         a = np.asarray(a_meas, dtype=float).reshape(-1)
         if a.shape[0] != 2:
             raise ValueError(f"INS a_meas 维度应为 (2,), 实际为 {a.shape}")
+        dt_use = float(self.cfg.dt if dt is None else dt)
+        if self._predict_dt is None or abs(self._predict_dt - dt_use) > 1e-15:
+            self._rebuild_motion(dt_use)
         self.x = self.F @ self.x + self.B @ a
         self.P = self.F @ self.P @ self.F.T + self.Q
 

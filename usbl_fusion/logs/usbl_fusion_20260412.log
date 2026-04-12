@@ -1,0 +1,164 @@
+2026-04-12 18:41:00.503 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 18:41:00.567 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 18:41:00.880 | INFO     | logging:callHandlers:1762 - Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: Can not load face (unknown file format; error code 0x2)
+2026-04-12 18:41:01.046 | INFO     | logging:callHandlers:1762 - generated new fontManager
+2026-04-12 18:41:01.178 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 18:41:01.216 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 18:41:01.273 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 18:41:01.464 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 18:41:01.713 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 18:56:51.592 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 18:56:51.649 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 18:56:51.798 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 18:56:51.836 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 18:56:51.890 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 18:56:52.077 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 18:56:52.329 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 19:00:05.151 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 19:00:05.208 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 19:00:05.355 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 19:00:05.394 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 19:00:05.448 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 19:00:05.637 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 19:00:05.886 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:07:57.197 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:07:57.265 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:07:57.448 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:07:57.490 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:07:57.591 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:07:57.810 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:07:58.089 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:10:52.619 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:10:52.688 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:10:52.862 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:10:52.913 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:10:52.996 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:10:53.223 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:10:53.568 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:11:50.078 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:11:50.152 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:11:50.328 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:11:50.378 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:11:50.461 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:11:50.704 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:11:51.028 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:12:08.809 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:12:08.907 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:12:09.094 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:12:09.148 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:12:09.223 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:12:09.463 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:12:09.777 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:12:25.037 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:12:25.111 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:12:25.296 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:12:25.363 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:12:25.452 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:12:25.697 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:12:26.051 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:12:39.477 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:12:39.546 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:12:39.726 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:12:39.776 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:12:39.852 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:12:40.073 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:12:40.388 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:12:58.084 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:12:58.165 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:12:58.352 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:12:58.401 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:12:58.477 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:12:58.699 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:12:59.005 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:14:44.585 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:14:44.659 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:14:44.833 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:14:44.885 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:14:44.961 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:14:45.232 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:14:45.574 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:34:27.602 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:34:27.689 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:34:27.858 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:34:27.907 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:34:27.982 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:34:28.190 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:34:28.481 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:35:09.954 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:35:10.029 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:35:10.223 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:35:10.275 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:35:10.347 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:35:10.572 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:35:10.896 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:48:07.818 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:48:07.881 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:48:08.038 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:48:08.083 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:48:08.150 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:48:08.353 | INFO     | __main__:main:141 - 融合完成，开始绘图
+2026-04-12 22:48:08.622 | INFO     | __main__:main:148 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:49:00.840 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:49:00.902 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:49:01.058 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:49:01.096 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:49:01.152 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:49:01.350 | INFO     | __main__:main:146 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=0.345424 max=1.258120 | INS+USBL EKF mean=3.307190 max=7.817128
+2026-04-12 22:49:01.350 | INFO     | __main__:main:160 - 融合完成，开始绘图
+2026-04-12 22:49:01.625 | INFO     | __main__:main:167 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:49:09.439 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:49:09.503 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:49:09.672 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:49:09.712 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:49:09.772 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:49:09.984 | INFO     | __main__:main:146 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=0.345424 max=1.258120 | INS+USBL EKF mean=3.307190 max=7.817128
+2026-04-12 22:49:09.984 | INFO     | __main__:main:160 - 融合完成，开始绘图
+2026-04-12 22:49:10.261 | INFO     | __main__:main:167 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:55:19.371 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:55:19.439 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:55:19.591 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:55:19.636 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:55:19.699 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:55:19.900 | INFO     | __main__:main:146 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=0.244665 max=0.899442 | INS+USBL EKF mean=2.389590 max=5.805404
+2026-04-12 22:55:19.900 | INFO     | __main__:main:160 - 融合完成，开始绘图
+2026-04-12 22:55:20.170 | INFO     | __main__:main:167 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 22:58:40.259 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 22:58:40.329 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 22:58:40.502 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 22:58:40.545 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 22:58:40.608 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 22:58:40.804 | INFO     | __main__:main:146 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=0.345424 max=1.258120 | INS+USBL EKF mean=3.307190 max=7.817128
+2026-04-12 22:58:40.805 | INFO     | __main__:main:160 - 融合完成，开始绘图
+2026-04-12 22:58:41.081 | INFO     | __main__:main:167 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 23:01:06.787 | INFO     | __main__:main:42 - 启动仿真与融合流程
+2026-04-12 23:01:06.854 | INFO     | __main__:main:45 - matplotlib backend = Agg
+2026-04-12 23:01:07.011 | INFO     | __main__:main:55 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 23:01:07.065 | INFO     | __main__:main:63 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 23:01:07.145 | INFO     | __main__:main:69 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 23:01:07.347 | INFO     | __main__:main:146 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=0.584177 max=1.988389 | INS+USBL EKF mean=4.895772 max=11.077818
+2026-04-12 23:01:07.347 | INFO     | __main__:main:160 - 融合完成，开始绘图
+2026-04-12 23:01:07.633 | INFO     | __main__:main:167 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 23:10:55.674 | INFO     | __main__:main:70 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-12 23:10:55.737 | INFO     | __main__:main:73 - matplotlib backend = Agg
+2026-04-12 23:10:55.738 | INFO     | __main__:main:83 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 23:10:55.739 | INFO     | __main__:main:90 - 海洋扰动参数：mean_N=0.0 mean_E=0.0 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02
+2026-04-12 23:10:56.150 | INFO     | __main__:main:131 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=4.823757 max=8.944159 | INS+USBL EKF mean=4.717659 max=12.831964
+2026-04-12 23:10:56.354 | INFO     | __main__:main:39 - 启动仿真与融合流程
+2026-04-12 23:10:56.424 | INFO     | __main__:main:42 - matplotlib backend = Agg
+2026-04-12 23:10:56.600 | INFO     | __main__:main:52 - 已加载配置文件：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 23:10:56.640 | INFO     | __main__:main:60 - 真值轨迹生成完成：N=6001, dt=0.1
+2026-04-12 23:10:56.697 | INFO     | __main__:main:66 - 传感器数据生成完成：DVL@每拍，USBL 有效点数=121
+2026-04-12 23:10:56.900 | INFO     | __main__:main:83 - 位置误差统计（相对真值，平面 ‖Δp‖₂，单位 m）： INS only  mean=160.421565 max=429.958702 | INS+DVL+USBL EKF mean=0.584177 max=1.988389 | INS+USBL EKF mean=4.895772 max=11.077818
+2026-04-12 23:10:56.900 | INFO     | __main__:main:97 - 融合完成，开始绘图
+2026-04-12 23:10:57.176 | INFO     | __main__:main:104 - 已保存图像：2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots
+2026-04-12 23:11:30.643 | INFO     | __main__:main:70 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-12 23:11:30.710 | INFO     | __main__:main:73 - matplotlib backend = Agg
+2026-04-12 23:11:30.711 | INFO     | __main__:main:83 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 23:11:30.712 | INFO     | __main__:main:90 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02
+2026-04-12 23:11:31.070 | INFO     | __main__:main:131 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.550698 max=24.627113 | INS+USBL EKF mean=4.326357 max=11.596751
+2026-04-12 23:13:15.668 | INFO     | __main__:main:70 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=configs/marine.ini
+2026-04-12 23:13:15.732 | INFO     | __main__:main:73 - matplotlib backend = Agg
+2026-04-12 23:13:15.887 | INFO     | __main__:main:83 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-12 23:13:15.887 | INFO     | __main__:main:90 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02
+2026-04-12 23:13:16.241 | INFO     | __main__:main:131 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.550698 max=24.627113 | INS+USBL EKF mean=4.326357 max=11.596751
+2026-04-12 23:13:16.530 | INFO     | __main__:main:149 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine

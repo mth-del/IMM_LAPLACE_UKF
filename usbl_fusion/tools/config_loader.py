@@ -18,7 +18,8 @@ from dataclasses import fields
 from pathlib import Path
 from typing import Any, Dict, Tuple, Type, TypeVar
 
-from data.simulator import SimConfig, NoiseConfig
+from data.marine_environment import MarineEnvConfig
+from data.simulator import NoiseConfig, SimConfig
 
 T = TypeVar("T")
 
@@ -47,11 +48,14 @@ def _dataclass_from_section(cls: Type[T], section: Dict[str, str]) -> T:
     只用 dataclass 已定义字段构造对象：
     - ini 里多余字段会被忽略（方便你加注释/占位）
     - ini 里缺字段会使用 dataclass 默认值
+    - 键名按不区分大小写匹配（ConfigParser 默认会把 option 名转成小写）
     """
+    lower_map = {str(k).lower(): v for k, v in section.items()}
     obj = cls()  # type: ignore[call-arg]
     for f in fields(cls):
-        if f.name in section:
-            setattr(obj, f.name, _cast_like(section[f.name], getattr(obj, f.name)))
+        v = lower_map.get(f.name.lower())
+        if v is not None:
+            setattr(obj, f.name, _cast_like(v, getattr(obj, f.name)))
     return obj
 
 
@@ -69,5 +73,19 @@ def load_sim_and_noise_config(path: str | Path) -> Tuple[SimConfig, NoiseConfig]
     sim_cfg = _dataclass_from_section(SimConfig, dict(parser["sim"]) if parser.has_section("sim") else {})
     noise_cfg = _dataclass_from_section(NoiseConfig, dict(parser["noise"]) if parser.has_section("noise") else {})
     return sim_cfg, noise_cfg
+
+
+def load_marine_config(path: str | Path) -> MarineEnvConfig:
+    """
+    从 ini 的 [marine] 段加载 MarineEnvConfig。
+    文件不存在或缺段时返回默认值（全部关闭）。
+    """
+    path = Path(path)
+    if not path.exists():
+        return MarineEnvConfig()
+    parser = ConfigParser(inline_comment_prefixes=(";", "#"))
+    parser.read(path, encoding="utf-8")
+    section = dict(parser["marine"]) if parser.has_section("marine") else {}
+    return _dataclass_from_section(MarineEnvConfig, section)
 
 
