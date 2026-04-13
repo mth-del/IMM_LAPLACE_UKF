@@ -53,13 +53,16 @@ def run(
 
     marine_cfg = load_marine_config(marine_path)
     logger.info(
-        "海洋扰动参数：mean_N={} mean_E={} ou_sigma={} dvl_turb={} usbl_ou_sigma={} burst_p={}",
+        "海洋扰动参数：mean_N={} mean_E={} ou_sigma={} dvl_turb={} usbl_ou_sigma={} "
+        "burst_p={} burst_scale={} burst_dist={}",
         marine_cfg.current_mean_N,
         marine_cfg.current_mean_E,
         marine_cfg.current_ou_sigma,
         marine_cfg.dvl_turbulence_std,
         marine_cfg.usbl_bias_ou_sigma,
         marine_cfg.usbl_burst_prob,
+        marine_cfg.usbl_burst_scale,
+        getattr(marine_cfg, "usbl_burst_dist", "gaussian"),
     )
 
     t, x_true, a_true = generate_truth(sim_cfg)

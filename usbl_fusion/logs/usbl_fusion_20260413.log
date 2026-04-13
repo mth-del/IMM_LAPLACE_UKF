@@ -17,3 +17,94 @@
 2026-04-13 00:24:21.776 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: dataset — 真实 CSV（IMU+DVL+GT）二维 EKF 融合 ========
 2026-04-13 00:25:25.876 | INFO     | sim_hub:cli_main:130 - 总控调度：dataset
 2026-04-13 00:25:25.876 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: dataset — 真实 CSV（IMU+DVL+GT）二维 EKF 融合 ========
+2026-04-13 09:13:14.010 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:13:14.010 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:13:14.058 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:13:14.132 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:13:14.286 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:13:14.287 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02
+2026-04-13 09:13:14.638 | INFO     | sims.marine:run:96 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.553585 max=24.635884 | INS+USBL EKF mean=4.310569 max=11.598350
+2026-04-13 09:13:14.911 | INFO     | sims.marine:run:114 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:16:54.029 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:16:54.030 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:16:54.134 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:16:54.217 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:16:54.218 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:16:54.219 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02 burst_scale=0.8 burst_dist=gaussian
+2026-04-13 09:16:54.627 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.553585 max=24.635884 | INS+USBL EKF mean=4.310569 max=11.598350
+2026-04-13 09:18:16.226 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:18:16.226 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:18:16.274 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:18:16.348 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:18:16.504 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:18:16.505 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02 burst_scale=0.8 burst_dist=gaussian
+2026-04-13 09:18:16.896 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.553585 max=24.635884 | INS+USBL EKF mean=4.310569 max=11.598350
+2026-04-13 09:18:17.165 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:18:41.965 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:18:41.965 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:18:42.063 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:18:42.137 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:18:42.292 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:18:42.293 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.02 burst_scale=0.8 burst_dist=laplace
+2026-04-13 09:18:42.651 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.550698 max=24.627113 | INS+USBL EKF mean=4.326357 max=11.596751
+2026-04-13 09:18:42.925 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:21:33.202 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:21:33.202 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:21:33.292 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:21:33.373 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:21:33.529 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:21:33.530 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=laplace
+2026-04-13 09:21:33.880 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.330146 max=23.883955 | INS+USBL EKF mean=4.545232 max=11.031025
+2026-04-13 09:21:34.155 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:22:03.338 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:22:03.338 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:22:03.436 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:22:03.504 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:22:03.659 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:22:03.660 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=gaussian
+2026-04-13 09:22:04.026 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.349681 max=23.893264 | INS+USBL EKF mean=4.614249 max=11.034011
+2026-04-13 09:22:04.305 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:23:02.348 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:23:02.348 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:23:02.451 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:23:02.525 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:23:02.527 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:23:02.527 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=gaussian
+2026-04-13 09:23:02.691 | INFO     | data.marine_environment:apply_marine_disturbances:142 - marine USBL 尖峰统计：有效 USBL 步数=121，Bernoulli 触发次数=15，dist=gaussian，p=0.1，scale=0.8
+2026-04-13 09:23:02.894 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.349681 max=23.893264 | INS+USBL EKF mean=4.614249 max=11.034011
+2026-04-13 09:24:39.892 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:24:39.892 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:24:39.994 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:24:40.068 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:24:40.227 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:24:40.228 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=laplace
+2026-04-13 09:24:40.402 | INFO     | data.marine_environment:apply_marine_disturbances:138 - marine USBL 尖峰统计：有效 USBL 步数=121，Bernoulli 触发次数=16，dist=laplace，p=0.1，scale=0.8
+2026-04-13 09:24:40.606 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.330146 max=23.883955 | INS+USBL EKF mean=4.545232 max=11.031025
+2026-04-13 09:24:40.882 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:25:02.083 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:25:02.083 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:25:02.187 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:25:02.266 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:25:02.424 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:25:02.425 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=gaussian
+2026-04-13 09:25:02.582 | INFO     | data.marine_environment:apply_marine_disturbances:138 - marine USBL 尖峰统计：有效 USBL 步数=121，Bernoulli 触发次数=15，dist=gaussian，p=0.1，scale=0.8
+2026-04-13 09:25:02.786 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.349681 max=23.893264 | INS+USBL EKF mean=4.614249 max=11.034011
+2026-04-13 09:25:03.055 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:31:38.096 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:31:38.096 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:31:38.193 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:31:38.276 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:31:38.444 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:31:38.445 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=laplace
+2026-04-13 09:31:38.607 | INFO     | data.marine_environment:apply_marine_disturbances:138 - marine USBL 尖峰统计：有效 USBL 步数=121，Bernoulli 触发次数=16，dist=laplace，p=0.1，scale=0.8
+2026-04-13 09:31:38.823 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.330146 max=23.883955 | INS+USBL EKF mean=4.545232 max=11.031025
+2026-04-13 09:31:39.102 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine
+2026-04-13 09:34:12.064 | INFO     | sim_hub:cli_main:130 - 总控调度：marine
+2026-04-13 09:34:12.065 | INFO     | sim_hub:run_sims:113 - ======== 运行 sim: marine — 海洋环境扰动层 + 与 baseline 相同 EKF 流水线 ========
+2026-04-13 09:34:12.122 | INFO     | sims.marine:run:36 - 海洋扰动仿真：sim_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini marine_ini=/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/marine.ini
+2026-04-13 09:34:12.197 | INFO     | sims.marine:run:39 - matplotlib backend = Agg
+2026-04-13 09:34:12.374 | INFO     | sims.marine:run:48 - 已加载 sim/noise：/home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/configs/sim_noise.ini
+2026-04-13 09:34:12.374 | INFO     | sims.marine:run:55 - 海洋扰动参数：mean_N=0.05 mean_E=-0.02 ou_sigma=0.03 dvl_turb=0.02 usbl_ou_sigma=1.0 burst_p=0.1 burst_scale=0.8 burst_dist=gaussian
+2026-04-13 09:34:12.553 | INFO     | data.marine_environment:apply_marine_disturbances:138 - marine USBL 尖峰统计：有效 USBL 步数=121，Bernoulli 触发次数=15，dist=gaussian，p=0.1，scale=0.8
+2026-04-13 09:34:12.760 | INFO     | sims.marine:run:99 - 位置误差（平面 ‖Δp‖₂ m）：INS mean=50.840190 max=156.987731 | INS+DVL+USBL EKF mean=10.349681 max=23.893264 | INS+USBL EKF mean=4.614249 max=11.034011
+2026-04-13 09:34:13.043 | INFO     | sims.marine:run:117 - 已保存图像 2 张 -> /home/timsea/code_space/IMM_LAPLACE_UKF/usbl_fusion/outputs/plots_marine

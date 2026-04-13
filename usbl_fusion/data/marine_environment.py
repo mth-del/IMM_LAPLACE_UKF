@@ -2,14 +2,16 @@
 海洋环境扰动（现象学叠加层）
 
 在 `simulate_sensors` 生成的高斯量测之上，再叠加与洋流、湍流、声速/声线类
-效应等价的慢变偏置与附加噪声，用于区分「理想高斯仿真」与「更复杂水下环境」。
+效应等价的慢变偏置与附加噪声。
 
-说明（建模取舍）：
-- 本工程状态为平面 [pN,pE,vN,vE]，不做完整流体动力学。
-- 「洋流」用 **DVL 速度上的慢变 OU 偏置 + 可选常值均值** 近似（表观对底速度偏差）。
-- 「湍流/剪切」用 **DVL 上附加白噪声**。
-- 「声速剖面/层化」用 **USBL 位置上的慢变 OU 偏置** 近似水平漂移。
-- 不对 INS 加计默认加项（可后续扩展）；需要时可在外部对 a_meas 再叠加。
+**USBL 偶发尖峰 `usbl_burst_dist`（与仅用高斯噪声的差别）**：
+- **gaussian**（默认）：触发时在 N/E 上各加独立 **N(0, b²)**，`b = usbl_burst_scale` 为标准差 (m)。
+  大幅误差概率随幅值按 **指数平方衰减**（尾较薄），与标准 EKF 高斯量测假设一致。
+- **laplace**：触发时各轴为 **Laplace(0, b)**，`b` 为 numpy 的 scale 参数 (m)，方差 **Var = 2b²**。
+  相对同尺度 b，**|误差| 大时概率更高（重尾）**，更粗拟多路径尖峰；与线性高斯 EKF 名义假设偏差更大，
+  常表现为 USBL 更新时位置/融合轨出现 **更偶发、更大的跳变**。
+
+洋流 OU、DVL 湍流、USBL OU 慢偏的随机驱动均为高斯。
 
 用法：
     from data.marine_environment import MarineEnvConfig, apply_marine_disturbances
@@ -25,6 +27,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from data.simulator import SimConfig
+from tools.logging_setup import logger as _marine_logger
 
 
 @dataclass
@@ -35,19 +38,21 @@ class MarineEnvConfig:
     current_mean_N: float = 0.0
     current_mean_E: float = 0.0
     current_ou_tau: float = 120.0
-    # OU 分量稳态标准差（围绕 0 的慢变波动，与 current_mean_* 相加）
     current_ou_sigma: float = 0.0
 
     # --- DVL 湍流/剪切：附加白噪声标准差 (m/s) ---
     dvl_turbulence_std: float = 0.0
 
-    # --- USBL：水平位置慢变偏置（OU，单位 m；稳态 RMS = usbl_bias_ou_sigma）---
+    # --- USBL：水平位置慢变偏置（OU，单位 m）---
     usbl_bias_ou_tau: float = 180.0
     usbl_bias_ou_sigma: float = 0.0
 
-    # --- USBL：多路径/散射引起的偶发尖峰（拉普拉斯，scale 同 np.random.laplace）---
+    # --- USBL：偶发尖峰（Bernoulli 触发；分布见 usbl_burst_dist）---
     usbl_burst_prob: float = 0.0
+    # gaussian：各轴标准差 (m)；laplace：numpy Laplace 的 scale (m)
     usbl_burst_scale: float = 0.5
+    # gaussian | laplace | gs | normal（后二者同 gaussian）；大小写不敏感
+    usbl_burst_dist: str = "gaussian"
 
 
 def _ou_step(
@@ -57,12 +62,22 @@ def _ou_step(
     steady_std: float,
     rng: np.random.Generator,
 ) -> np.ndarray:
-    """离散 OU：稳态标准差为 steady_std。"""
     if tau <= 0.0:
         return float(steady_std) * rng.standard_normal(x.shape)
     alpha = float(np.exp(-dt / tau))
     q = float(np.sqrt(max(0.0, 1.0 - alpha * alpha)))
     return alpha * x + float(steady_std) * q * rng.standard_normal(x.shape)
+
+
+def _burst_noise_xy(rng: np.random.Generator, dist: str, scale: float) -> np.ndarray:
+    d = dist.strip().lower()
+    b = float(scale)
+    if b <= 0.0:
+        return np.zeros(2, dtype=float)
+    if d in ("laplace", "lap", "l"):
+        return rng.laplace(0.0, b, size=2)
+    # gaussian / gs / normal / g / "" / unknown -> 高斯
+    return b * rng.standard_normal(2)
 
 
 def apply_marine_disturbances(
@@ -89,6 +104,8 @@ def apply_marine_disturbances(
     n = dvl_out.shape[0]
     mask = np.asarray(usbl_mask, dtype=bool).reshape(-1)
 
+    burst_dist = str(getattr(marine, "usbl_burst_dist", "gaussian") or "gaussian")
+
     cur_ou = np.zeros(2, dtype=float)
     mean = np.array([marine.current_mean_N, marine.current_mean_E], dtype=float)
 
@@ -103,15 +120,29 @@ def apply_marine_disturbances(
                 dvl_out[k, 0:2] = dvl_out[k, 0:2] + marine.dvl_turbulence_std * rng.standard_normal(2)
 
     b_usbl = np.zeros(2, dtype=float)
+    n_usbl_valid = 0
+    n_burst = 0
     for k in range(n):
         if marine.usbl_bias_ou_sigma > 0.0:
             b_usbl = _ou_step(b_usbl, dt, marine.usbl_bias_ou_tau, marine.usbl_bias_ou_sigma, rng)
         if k < len(mask) and mask[k] and not np.any(np.isnan(usbl_out[k, :])):
+            n_usbl_valid += 1
             usbl_out[k, 0:2] = usbl_out[k, 0:2] + b_usbl
             if marine.usbl_burst_prob > 0.0 and rng.random() < marine.usbl_burst_prob:
-                usbl_out[k, 0:2] = usbl_out[k, 0:2] + rng.laplace(
-                    0.0, marine.usbl_burst_scale, size=2
+                n_burst += 1
+                usbl_out[k, 0:2] = usbl_out[k, 0:2] + _burst_noise_xy(
+                    rng, burst_dist, float(marine.usbl_burst_scale)
                 )
 
-    _ = t  # 预留按时间调参（潮汐等）
+    if marine.usbl_burst_prob > 0.0:
+        _marine_logger.info(
+            "marine USBL 尖峰统计：有效 USBL 步数={}，Bernoulli 触发次数={}，dist={}，p={}，scale={}",
+            n_usbl_valid,
+            n_burst,
+            burst_dist,
+            marine.usbl_burst_prob,
+            float(marine.usbl_burst_scale),
+        )
+
+    _ = t
     return a_out, dvl_out, usbl_out

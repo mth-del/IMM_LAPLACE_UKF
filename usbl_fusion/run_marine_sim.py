@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 在传感器仿真之后叠加海洋环境扰动，再跑 EKF。
+USBL 尖峰分布由 marine.ini 的 usbl_burst_dist 控制：gaussian（默认）或 laplace。
 
 命令行参数与历史版本兼容；实现位于 sims/marine.py，亦可经总控运行：
   python main.py --sim marine
